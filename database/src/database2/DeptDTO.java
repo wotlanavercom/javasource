@@ -1,8 +1,13 @@
 package database2;
 
 //클래스간 데이터 전달을 위해 사용하는 객체
-//~~~DTO(date Transfer Object)
+//~~~DTO(date Transfer Object) : 객체간 데이터 전달 
+//								DB 결과를 다른 객체로 넘길때 주로 사용
+//								사용자 입력 결과를 DAO 클래스로 넘길 때도 사용
 //~~~VO(Value Object)
+//~~~DAO : DataBase 작업을 담당하는 클래스임
+
+//Mine + DAO + DTO 콘솔
 
 //db 데이터 내용을 전송하는 용도로 주로 사용
 //table 컬럼과 동일하게 작성
