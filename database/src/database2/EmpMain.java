@@ -27,16 +27,41 @@ public class EmpMain {
 			//switch 작성
 			switch (menu) {
 			case 1:
+				//삽입할 사원정보 입력받기
+				EmpDTO empDTO = new EmpDTO();
+				System.out.print("새사원 추가");
+				System.out.print("추가할 사번입력 >> ");
+				empDTO.setEmpno(Integer.parseInt(sc.nextLine()));
+				System.out.print("추가할 사원 이름 입력 >> ");
+				empDTO.setEname(sc.nextLine());
+				System.out.print("추가할 직무 입력 >> ");
+				empDTO.setJob(sc.nextLine());
+				System.out.print("추가할 매니저 번호 입력 >> ");
+				empDTO.setEmpno(Integer.parseInt(sc.nextLine()));
+				System.out.print("추가할 급여 입력 >> ");
+				empDTO.setEmpno(Integer.parseInt(sc.nextLine()));
+				System.out.print("추가할 추가수당 입력 >> ");
+				empDTO.setEmpno(Integer.parseInt(sc.nextLine()));
+				System.out.print("추가할 부서번호 입력 >> ");
+				empDTO.setEmpno(Integer.parseInt(sc.nextLine()));
 				
+				System.out.println(empDAO.insert(empDTO)?"사원 추가 성공":"사원 추가 실패");
+				
+								
 				break;
 			case 2:
+				//삭제할 empno 입력받기
+				System.out.println("삭제할 사번 입력 >> ");				
+				int empno = Integer.parseInt(sc.nextLine());
+				
+				System.out.println(empDAO.remove(empno)?"삭제 성공":"삭제 실패");
 				
 				break;
 			case 3:
 				//empno, sal 입력받기
 				System.out.println("수정할 정보 입력 >> ");
 				System.out.println("사원번호 >> ");
-				int empno = Integer.parseInt(sc.nextLine());
+				empno = Integer.parseInt(sc.nextLine());
 				
 				System.out.println("수정 급여 >> ");
 				int sal = Integer.parseInt(sc.nextLine());
@@ -82,11 +107,11 @@ public class EmpMain {
 				}else {
 					System.out.println("사번\t사원명\t직무\t\t입사일");
 					System.out.println("---------------------------------");
-					for (EmpDTO empDTO : list) {
-						System.out.print(empDTO.getDeptno()+"\t");
-						System.out.print(empDTO.getEname()+"\t");
-						System.out.print(empDTO.getJob()+"\t");
-						System.out.print(empDTO.getHiredate()+"\n\n");
+					for (EmpDTO empDTO1 : list) {
+						System.out.print(empDTO1.getDeptno()+"\t");
+						System.out.print(empDTO1.getEname()+"\t");
+						System.out.print(empDTO1.getJob()+"\t");
+						System.out.print(empDTO1.getHiredate()+"\n\n");
 					}
 					
 				}

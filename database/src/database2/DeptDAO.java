@@ -9,9 +9,9 @@ import java.util.ArrayList;
 //~~~DAO : DataBase 작업을 담당하는 클래스임
 public class DeptDAO {
 	
-	private Connection con;
-	private PreparedStatement pstmt;
-	private ResultSet rs;
+	private Connection con; //이클립스랑 데이터베이스랑 연결
+	private PreparedStatement pstmt; //- SQL 구문을 실행하는 역할 - 스스로는 SQL 구문 이해 못함(구문해석 X) -> 전달역할 - SQL 관리 O + 연결 정보 X
+	private ResultSet rs; //수정 추가 삭제 db에 명령을 내리고 그값을 돌려준다
 	
 	//커넥션을 위한 드라이버 로드	
 	static {
