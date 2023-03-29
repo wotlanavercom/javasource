@@ -20,6 +20,12 @@ public class WhileEx2 {
 		}
 		System.out.println("j="+j);
 		System.out.println("sum="+sum);
+		
+		int add=0;
+		for (int j2 = 1; j2 < 10; j2++) {
+			add = 6*j2;
+			System.out.printf("6 * %d = %d\n",j2,(6*j2));
+		}
 
 	}
 

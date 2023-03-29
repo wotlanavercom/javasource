@@ -15,4 +15,6 @@ public class UserDTO {
 	private int userId;
 	private String name;
 	private int payNo;
+	
+	private String type;
 }

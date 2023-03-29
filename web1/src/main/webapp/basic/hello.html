@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<h1>hello</h1>
+	<!-- <form action="hello.jsp" method="post"> -->
+	<form action="/HelloServlet" method="post">
+	<!-- http://localhost:8080/basic/hello.html
+		ac
+		
+		경로설정시 / 를 붙이게 되면
+		http://localhost:8080/경로 시작
+		
+		경로 설정 시 / 를 안 붙이면
+		원래 주소가 아래와 같을 때
+		http://localhost:8080/basic/hello.html
+		
+		마지막에 나오는 경로만 제거된 후 붙이게 됨
+		http://localhost:8080/basic/새경로 -->
+		
+		<div>
+			<label for="name">이름</label>
+			<input type="text" name="name" id="name" /> <!-- input:t  tab -->
+		</div>
+		<div>
+			<label for="age">나이</label>
+			<input type="text" name="age" id="age" /> <!-- input:t  tab -->
+		</div>
+		<div>
+			<input type="submit" value="전송" />  <!-- input:s  tab -->
+		</div>
+	</form>
+</body>
+</html>

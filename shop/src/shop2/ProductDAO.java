@@ -20,8 +20,11 @@ public class ProductDAO {
 		List<ProductDTO> list = new ArrayList<>();
 		
 		try {
+			
+			con = getConnection();
+			
 			//전체 상품 조회
-			String sql = "select * from produc";
+			String sql = "select * from product";
 			pstmt = con.prepareStatement(sql);
 			
 			rs = pstmt.executeQuery();
