@@ -15,11 +15,11 @@
  //const no = document.querySelector("#no").value;
  
  list.addEventListener("click",() => {
-	 location.href = "list.jsp"
+	 location.href = "listPro.jsp"
  });
  modify.addEventListener("click",() => {
-	 location.href = "modify.jsp?no=" +no
+	 location.href = "modifyPro.jsp?no=" +no
  });
  remove.addEventListener("click",() => {
-	 location.href = "remove.jsp?no=" +no
+	 location.href = "removePro.jsp?no=" +no
  });

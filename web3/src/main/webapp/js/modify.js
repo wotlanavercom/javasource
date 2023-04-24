@@ -4,6 +4,12 @@
  * 둘다 빈칸일때 submit 막고, 메세지 띄우기
  */
 
+const list = document.querySelector(".btn-primary");
+
+list.addEventListener("click",() => {
+	 location.href = "listPro.jsp"
+ });
+
  const form = document.querySelector("form");
  
  form.addEventListener("submit",(e) => {
