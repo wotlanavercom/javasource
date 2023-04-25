@@ -7,6 +7,10 @@ import java.sql.ResultSet;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.naming.Context;
+import javax.naming.InitialContext;
+import javax.sql.DataSource;
+
 import book.domain.BookDTO;
 
 public class BookDAO {
@@ -14,23 +18,16 @@ public class BookDAO {
 	private Connection con;
 	private PreparedStatement pstmt;
 	private ResultSet rs;
-	//드라이버 로드
-	static {
-		try {
-			Class.forName("oracle.jdbc.OracleDriver");
-		} catch (Exception e) {
-			e.printStackTrace();			
-		}
-	}
+	
 	//DB서버 연결
 	public Connection getConnection() {
-		
-		String url = "jdbc:oracle:thin:@localhost:1521:xe";
-		String user = "javadb";
-		String password = "12345";
-		
+				
 		try {
-			Connection con = DriverManager.getConnection(url, user,password);
+			
+			Context ctx = new InitialContext();
+			
+			DataSource ds = (DataSource) ctx.lookup("java:comp/env/jdbc/myoracle");			
+			Connection con = ds.getConnection();
 			//DML 실행 시 트랜잭션 관리를 직접 하겠음
 			con.setAutoCommit(false);
 			return con;
