@@ -24,6 +24,10 @@ public class BookActionFactory {
 			action = new BookModifyAction();
 		}else if (cmd.equals("/update.do")) {
 			action = new BookUpdateAction();
+		}else if (cmd.equals("/remove.do")) {
+			action = new BookDeleteAction();
+		}else if (cmd.equals("/search.do")) {
+			action = new BookSearchAction();
 		}
 		
 		return action;
