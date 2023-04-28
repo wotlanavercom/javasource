@@ -2,7 +2,39 @@
  * 폼 모든 요소가 비어있는지 확인
  */
 
-function validatePassword(password) {
+const form = document.querySelector("form");
+
+form.addEventListener("submit",(e)=>{
+	if(!form.checkValidity()){
+		e.preventDefault();
+		e.stopPropagation();
+	}
+	form.classList.add("was-validated");
+})
+
+//중복 아이디 확인 코드
+document.querySelector(".btn-danger").addEventListener('click',()=>{
+	//사용자가 입력한 userid 가져오기
+	const userid = document.querySelector('#userid').value;
+	
+	fetch("dupId.do",{
+		method:"post",
+		body: new URLSearchParams({userid:userid})
+	})
+	.then((response)=>response.text())
+	.then((result) => {
+		console.log(result);
+		if(result.trim() === "true"){
+			alert("아이디를 사용할 수 있습니다");
+		}else{
+			alert("아이디를 사용할 수 없습니다");
+		}
+	});
+})
+
+
+
+/*function validatePassword(password) {
   const regex = /^(?=.*[a-zA-Z])(?=.*\d)(?=.*[~!@#$%^&*()_+|<>?:{}])[A-Za-z\d~!@#$%^&*()_+|<>?:{}]{,12}$/;
   return regex.test(password);
 }
@@ -17,7 +49,7 @@ function validateUserid(userid) {
  const form = document.querySelector("form");
  
  form.addEventListener("submit",(e)=>{
-	 e.preventDefault;
+	 e.preventDefault();
 	 
 	 const userid = document.querySelector("#userid");
 	 const password = document.querySelector("#password");
@@ -49,4 +81,5 @@ function validateUserid(userid) {
 	 }
 	 form.submit();
  })
+ */
  

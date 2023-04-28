@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 
+	maxTotal : 최대 커넥션 개수
+	maxIdle : 커넥션 풀에서 유지될 수 있는 idle 상태 커넥션의 최대 개수
+	maxWaitMillis : 커넥션 사용이 많아져서 커넥션 풀이 비었을 때 사용할 수 있는
+					커넥션을 반환받기까지 기다릴 수 있는 최대 시간
+ -->
+<Context>
+	<Resource name="jdbc/myoracle" auth="Container"
+	              type="javax.sql.DataSource" driverClassName="oracle.jdbc.OracleDriver"
+	              url="jdbc:oracle:thin:@127.0.0.1:1521:xe"
+	              username="javadb" password="12345" maxTotal="20" maxIdle="10"
+	              maxWaitMillis="-1"/>	
+</Context>
