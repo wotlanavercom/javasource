@@ -39,5 +39,7 @@
   <button type="button" class="btn btn-success">목록보기</button>
 </form>
 </main>
+<script src='<c:url value="/js/write.js"/>'>
 
+</script>
 <%@ include file="include/footer.jsp"%>

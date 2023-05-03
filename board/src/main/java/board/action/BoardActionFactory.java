@@ -18,6 +18,16 @@ public class BoardActionFactory {
 			action = new BoardWriteAction();
 		}else if (cmd.equals("/list.do")) {
 			action = new BoardListAction();
+		}else if (cmd.equals("/read.do")) {
+			action = new BoardReadAction();
+		}else if (cmd.equals("/cntUpdate.do")) {
+			action = new BoardCntAction();
+		}else if (cmd.equals("/modify.do")) {
+			action = new BoardModifyAction();
+		}else if (cmd.equals("/update.do")) {
+			action = new BoardUpdateAction();
+		}else if (cmd.equals("/delete.do")) {
+			action = new BoardDeleteAction();
 		}
 		return action;
 	}
