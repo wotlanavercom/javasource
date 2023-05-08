@@ -37,7 +37,7 @@ public class BoardWriteAction implements Action {
 		//ActionForward : 성공하면 목록 보여주기, 실패시 writeForm.jsp
 		String path = "";
 		if(service.insert(dto)) {
-			path = "list.do";
+			path = "list.do?criteria=&keyword=&page=1&amount=30";
 		}else {
 			path = "writeForm.jsp";
 		}

@@ -2,7 +2,9 @@
  * 
  */
 document.querySelector(".btn-success").addEventListener("click",()=>{
-	location.href="list.do";
+	//location.href="list.do";
+	modifyForm.action = "list.do";
+	modifyForm.submit();
 })
 
 //삭제버튼 클릭 시 modifyForm 전송

@@ -5,7 +5,8 @@
 const readForm = document.querySelector("#readForm");
 	
 document.querySelector(".btn-success").addEventListener("click",()=>{
-	location.href="list.do";
+	readForm.action = "list.do";
+	readForm.submit();
 })
 
 //답변 클릭시

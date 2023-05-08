@@ -39,5 +39,11 @@
   <button type="button" class="btn btn-success">목록보기</button>
 </form>
 </main>
+<form action="list.do" id="writeForm">		
+		<input type="hidden" name="criteria" value="" />
+		<input type="hidden" name="keyword" value="" />
+		<input type="hidden" name="page" value="1" />
+		<input type="hidden" name="amount" value="30" />	
+</form>
 <script src='<c:url value="/js/write.js"/>'></script>
 <%@ include file="include/footer.jsp"%>

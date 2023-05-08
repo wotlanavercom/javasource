@@ -40,10 +40,22 @@
   <input type="hidden" name="re_lev" value="${dto.reLev}" />
   <input type="hidden" name="re_seq" value="${dto.reSeq}" />
   
+  <input type="hidden" name="criteria" value="${pageDTO.criteria}" />
+		<input type="hidden" name="keyword" value="${pageDTO.keyword}" />
+		<input type="hidden" name="page" value="${pageDTO.page}" />
+		<input type="hidden" name="amount" value="${pageDTO.amount}" />
+  
   <button type="submit" class="btn btn-primary">댓글등록</button>
   <button type="reset" class="btn btn-danger">다시작성</button>
   <button type="button" class="btn btn-success">목록보기</button>
 </form>
 </main>
+<form action="" id="replyForm">		
+		<input type="hidden" name="criteria" value="${pageDTO.criteria}" />
+		<input type="hidden" name="keyword" value="${pageDTO.keyword}" />
+		<input type="hidden" name="page" value="${pageDTO.page}" />
+		<input type="hidden" name="amount" value="${pageDTO.amount}" />
+	
+</form>
 <script src='<c:url value="/js/write.js"/>'></script>
 <%@ include file="include/footer.jsp"%>
